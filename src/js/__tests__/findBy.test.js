@@ -26,3 +26,12 @@ test('find without arguments', () => {
   const expected = data;
   expect(recieved).toEqual(expected);
 });
+
+test('returns several objects', () => {
+  const recieved = data.filter(findBy('type', 'help'));
+  const expected = [
+    { name: 'урон', type: 'help', description: 'Страница описания элемента интерфейса' },
+    { name: 'magicHelper', type: 'help', description: 'Can help you with any problem you have...' },
+  ];
+  expect(recieved).toEqual(expected);
+});
